@@ -1,5 +1,8 @@
 <template>
-  <div></div>
+  <div>
+    <!-- 占位显示 -->
+    <slot></slot>
+  </div>
 </template>
 <script>
 export default {};
