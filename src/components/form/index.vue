@@ -4,9 +4,13 @@
     <hr />
     <k-form :model="model" :rules="rules" ref="loginForm">
       <k-form-item label="用户名" prop="username">
-        <k-input v-model="model.username" autocomplete="off"></k-input>
+        <k-input
+          v-model="model.username"
+          autocomplete="off"
+          placeholder="请输入用户名"
+        ></k-input>
       </k-form-item>
-      <k-form-item label="密码" prop="password">
+      <k-form-item label="密码" placeholder="请输入密码" prop="password">
         <k-input
           type="password"
           v-model="model.password"
@@ -17,6 +21,7 @@
         <botton @click="submitForm('loginForm')">搜索</botton>
       </k-form-item>
     </k-form>
+    {{ model }}
   </div>
 </template>
 <script>
@@ -31,7 +36,7 @@ export default {
   },
   data() {
     return {
-      model: { usernameL: "tom", password: "" },
+      model: { username: "tom", password: "" },
       rules: {
         username: [{ required: true, message: "请输入要用户名" }],
         password: [{ required: true, message: "请输入密码" }]

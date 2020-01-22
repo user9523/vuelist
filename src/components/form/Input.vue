@@ -5,6 +5,8 @@
 </template>
 <script>
 export default {
+  // 清除默认父级继承的DOM属性
+  inheritAttrs: false,
   props: {
     value: {
       type: String,
