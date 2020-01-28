@@ -17,8 +17,8 @@
           autocomplete="off"
         ></k-input>
       </k-form-item>
-      <k-form-item label="密码" prop="password">
-        <botton @click="submitForm('loginForm')">搜索</botton>
+      <k-form-item>
+        <button @click="submitForm('loginForm')">提交</button>
       </k-form-item>
     </k-form>
     {{ model }}
@@ -44,7 +44,7 @@ export default {
     };
   },
   methods: {
-    submitFrom(form) {
+    submitForm(form) {
       this.$refs[form].validate(valid => {
         if (valid) {
           alert("请求登录!");

@@ -16,6 +16,8 @@ export default {
   methods: {
     onInput(e) {
       this.$emit("input", e.target.value);
+      // 派发事件触发监听 验证
+      this.$parent.$emit("validate");
     }
   }
 };
