@@ -28,7 +28,6 @@
 import KForm from "./Form";
 import KInput from "./Input";
 import KFormItem from "./Formitem";
-import create from "@/utils/create";
 import Notice from "../notice/KNotice";
 export default {
   components: {
@@ -53,7 +52,7 @@ export default {
         // } else {
         //   alert("校验失败!");
         // }
-        const notice = create(Notice, {
+        const notice = this.$create(Notice, {
           title: "社会喊你来搬砖",
           message: valid ? "请求登录！" : "检验失败！",
           duration: 1000
