@@ -3,7 +3,7 @@ import Vue from "vue";
 export default function create(Component, props) {
   // 先创建实例
   const vm = new Vue({
-    renter(h) {
+    render(h) {
       // h就是 createElement, 它返回VNode
       return h(Component, { props });
     }
@@ -17,4 +17,5 @@ export default function create(Component, props) {
     document.body.removeChild(vm.$el);
     vm.$destroy();
   };
+  return comp;
 }

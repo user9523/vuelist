@@ -28,6 +28,8 @@
 import KForm from "./Form";
 import KInput from "./Input";
 import KFormItem from "./Formitem";
+import create from "@/utils/create";
+import Notice from "../notice/KNotice";
 export default {
   components: {
     KInput,
@@ -46,11 +48,17 @@ export default {
   methods: {
     submitForm(form) {
       this.$refs[form].validate(valid => {
-        if (valid) {
-          alert("请求登录!");
-        } else {
-          alert("校验失败!");
-        }
+        // if (valid) {
+        //   alert("请求登录!");
+        // } else {
+        //   alert("校验失败!");
+        // }
+        const notice = create(Notice, {
+          title: "社会喊你来搬砖",
+          message: valid ? "请求登录！" : "检验失败！",
+          duration: 1000
+        });
+        notice.show();
       });
     }
   }
